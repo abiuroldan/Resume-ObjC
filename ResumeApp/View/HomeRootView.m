@@ -37,7 +37,8 @@
     self.descriptionLabel.numberOfLines = 0;
     [self.descriptionLabel setTextAlignment:NSTextAlignmentJustified];
     
-    self.profilePhoto.backgroundColor = [UIColor greenColor];
+    self.profilePhoto.layer.cornerRadius = (UIScreen.mainScreen.bounds.size.width * 0.35) / 2;
+    self.profilePhoto.clipsToBounds = YES;
     
     [self addSubview:self.profilePhoto];
     [self addSubview:self.name];
@@ -72,6 +73,9 @@
 - (void) setViewWith:(User *)user {
     self.name.text = user.name;
     self.descriptionLabel.text = user.blog;
+    
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: user.avatar]]];
+    self.profilePhoto.image = image;
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
