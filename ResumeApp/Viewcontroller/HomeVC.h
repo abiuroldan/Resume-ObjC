@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GetUserProtocol.h"
 
-@interface HomeVC : UIViewController
+@interface HomeVC : UIViewController <GetUserProtocol>
 
 @end

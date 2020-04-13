@@ -8,9 +8,12 @@
 
 #import "HomeVC.h"
 #import "HomeRootView.h"
+#import "HomeViewModel.h"
+#import "User.h"
 
 @interface HomeVC ()
 @property (nonatomic, strong) HomeRootView *rootView;
+@property (nonatomic, strong) HomeViewModel *viewModel;
 @end
 
 @implementation HomeVC
@@ -22,21 +25,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [_viewModel setDelegate:self];
 }
 
 - (void)setViews {
     _rootView = [[HomeRootView alloc] init];
+    _viewModel = [[HomeViewModel alloc] init];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) didGetUser:(NSDictionary *)data {
+    User *user = [[User alloc] init];
+    user = [user createUserWith:data];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.rootView setViewWith: user];
+    });
 }
-*/
 
 @end

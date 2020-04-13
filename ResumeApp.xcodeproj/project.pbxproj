@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E4BCA5824413A6300C519D5 /* UIView+UIView_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BCA5724413A6300C519D5 /* UIView+UIView_Extension.m */; };
+		1E5BC3652443E39200439551 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5BC3642443E39200439551 /* HomeViewModel.m */; };
+		1E5BC3682443E46100439551 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5BC3672443E46100439551 /* User.m */; };
 		1E9AC831242EEEFE007A5BB0 /* HomeRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9AC830242EEEFE007A5BB0 /* HomeRootView.m */; };
 		1EA8216A242EE9E5009AB275 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA82169242EE9E5009AB275 /* AppDelegate.m */; };
 		1EA8216D242EE9E5009AB275 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA8216C242EE9E5009AB275 /* SceneDelegate.m */; };
@@ -24,6 +26,11 @@
 /* Begin PBXFileReference section */
 		1E4BCA5624413A6300C519D5 /* UIView+UIView_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UIView_Extension.h"; sourceTree = "<group>"; };
 		1E4BCA5724413A6300C519D5 /* UIView+UIView_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIView_Extension.m"; sourceTree = "<group>"; };
+		1E5BC3632443E39200439551 /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		1E5BC3642443E39200439551 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
+		1E5BC3662443E46100439551 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		1E5BC3672443E46100439551 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		1E5BC36A2443F45700439551 /* GetUserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetUserProtocol.h; sourceTree = "<group>"; };
 		1E9AC82F242EEEFE007A5BB0 /* HomeRootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRootView.h; sourceTree = "<group>"; };
 		1E9AC830242EEEFE007A5BB0 /* HomeRootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRootView.m; sourceTree = "<group>"; };
 		1EA82165242EE9E5009AB275 /* ResumeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResumeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +80,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1E5BC3602443E09F00439551 /* View model */ = {
+			isa = PBXGroup;
+			children = (
+				1E5BC3632443E39200439551 /* HomeViewModel.h */,
+				1E5BC3642443E39200439551 /* HomeViewModel.m */,
+			);
+			path = "View model";
+			sourceTree = "<group>";
+		};
+		1E5BC3692443F43E00439551 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1E5BC36A2443F45700439551 /* GetUserProtocol.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		1E9AC82E242EEEE2007A5BB0 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +109,10 @@
 		1E9AC832242F0A34007A5BB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1E5BC3692443F43E00439551 /* Protocols */,
 				1E9AC833242F0A3A007A5BB0 /* Data layer */,
+				1E5BC3662443E46100439551 /* User.h */,
+				1E5BC3672443E46100439551 /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +146,7 @@
 		1EA82167242EE9E5009AB275 /* ResumeApp */ = {
 			isa = PBXGroup;
 			children = (
+				1E5BC3602443E09F00439551 /* View model */,
 				1E4BCA542441371900C519D5 /* Reusable */,
 				1E9AC832242F0A34007A5BB0 /* Model */,
 				1E9AC82E242EEEE2007A5BB0 /* View */,
@@ -229,8 +257,10 @@
 				1E4BCA5824413A6300C519D5 /* UIView+UIView_Extension.m in Sources */,
 				1EA8217E242EE9E7009AB275 /* main.m in Sources */,
 				1EF08C212430674700184E25 /* APIRouter.m in Sources */,
+				1E5BC3652443E39200439551 /* HomeViewModel.m in Sources */,
 				1EA82176242EE9E5009AB275 /* ResumeApp.xcdatamodeld in Sources */,
 				1EA82170242EE9E5009AB275 /* ViewController.m in Sources */,
+				1E5BC3682443E46100439551 /* User.m in Sources */,
 				1E9AC831242EEEFE007A5BB0 /* HomeRootView.m in Sources */,
 				1EA82189242EEACD009AB275 /* HomeVC.m in Sources */,
 				1EA8216A242EE9E5009AB275 /* AppDelegate.m in Sources */,
