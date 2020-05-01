@@ -26,11 +26,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_viewModel setDelegate:self];
+    
+    NSLog(@"Dark mode? %ld", (long)UITraitCollection.currentTraitCollection.userInterfaceStyle);
+    
+    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        self.rootView.backgroundColor = [UIColor blackColor];
+    }
 }
 
 - (void)setViews {
     _rootView = [[HomeRootView alloc] init];
     _viewModel = [[HomeViewModel alloc] init];
+    [self.rootView setLoader];
 }
 
 - (void) didGetUser:(NSDictionary *)data {
@@ -40,6 +47,7 @@
     HomeVC * __weak weakself = self;
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [weakself.rootView deleteLoader];
         [weakself.rootView setViewWith: user];
     });
 }

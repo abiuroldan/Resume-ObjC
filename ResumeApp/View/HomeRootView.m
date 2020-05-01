@@ -38,6 +38,7 @@
     [self.descriptionLabel setTextAlignment:NSTextAlignmentJustified];
     
     self.profilePhoto.layer.cornerRadius = (UIScreen.mainScreen.bounds.size.width * 0.35) / 2;
+    
     self.profilePhoto.clipsToBounds = YES;
     
     [self addSubview:self.profilePhoto];
@@ -77,6 +78,20 @@
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: user.avatar]]];
     self.profilePhoto.image = image;
 }
+
+- (void) setLoader {
+    _loader = [[UIActivityIndicatorView alloc] init];
+    [self addSubview:self.loader];
+    [self.loader createConstraintsWithTopAnchor:self.safeAreaLayoutGuide.topAnchor leadingAnchor:self.leadingAnchor trailingAnchor:self.trailingAnchor bottomAnchor:self.safeAreaLayoutGuide.bottomAnchor topSpace:0 leftSpace:0 rightSpace:0 bottomSpace:0];
+    [self.loader startAnimating];
+}
+
+- (void) deleteLoader {
+    [self.loader stopAnimating];
+    _loader = nil;
+    [self.loader removeFromSuperview];
+}
+
 
 - (id)initWithCoder:(NSCoder *)coder {
     if ((self = [super initWithCoder:coder])) {}
