@@ -36,8 +36,11 @@
 - (void) didGetUser:(NSDictionary *)data {
     User *user = [[User alloc] init];
     user = [user createUserWith:data];
+    
+    HomeVC * __weak weakself = self;
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.rootView setViewWith: user];
+        [weakself.rootView setViewWith: user];
     });
 }
 
